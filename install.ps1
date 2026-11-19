@@ -26,9 +26,12 @@ $targetMap = @{
     "agents"  = ".agents\skills"
     "codex"   = ".agents\skills"
     "claude"  = ".claude\skills"
-    "copilot" = if ($Scope -eq "User") { ".copilot\skills" } else { ".github\skills" }
+    "copilot" = ".copilot\skills"
     "gemini"  = ".gemini\skills"
     "cursor"  = ".cursor\skills"
+}
+if ($Scope -eq "Project") {
+    $targetMap["copilot"] = ".github\skills"
 }
 
 if ($Target -eq "all") {
