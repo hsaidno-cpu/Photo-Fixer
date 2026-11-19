@@ -1,0 +1,28 @@
+{
+  "name": "PHOTO FIXER",
+  "id": "photo-fixer",
+  "version": "1.0.0",
+  "description": "Paket skill AI modular untuk retouch, restorasi, koreksi, komposit, dan pemeriksaan foto.",
+  "format": "Agent Skills",
+  "entry_skill": ".agents/skills/photo-fixer/SKILL.md",
+  "skill_root": ".agents/skills",
+  "subskills": [
+    "photo-fixer-image-assessment",
+    "photo-fixer-portrait-retouch",
+    "photo-fixer-photo-restoration",
+    "photo-fixer-lighting-film",
+    "photo-fixer-color-correction",
+    "photo-fixer-background-object-editing",
+    "photo-fixer-scene-compositing",
+    "photo-fixer-product-vehicle-photography",
+    "photo-fixer-social-formatting",
+    "photo-fixer-detail-upscaling",
+    "photo-fixer-quality-control"
+  ],
+  "references": [
+    ".agents/skills/photo-fixer/references/command-library.md",
+    ".agents/skills/photo-fixer/references/quality-checklist.md",
+    ".agents/skills/photo-fixer/references/output-presets.md",
+    ".agents/skills/photo-fixer/references/platform-adaptation.md"
+  ]
+}
