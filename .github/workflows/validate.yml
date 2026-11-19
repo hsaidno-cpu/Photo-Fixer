@@ -1,0 +1,38 @@
+name: Validate PHOTO FIXER
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check shell installer syntax
+        run: bash -n install.sh
+      - name: Validate package structure
+        run: python tests/validate_package.py
+
+  powershell-syntax:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Parse PowerShell installer
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $parseErrors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path "install.ps1").Path, [ref]$tokens, [ref]$parseErrors) | Out-Null
+          if ($parseErrors.Count -gt 0) {
+            $parseErrors | Format-List | Out-String | Write-Error
+          }
