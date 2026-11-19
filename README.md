@@ -160,7 +160,7 @@ Dokumentasi: https://docs.anthropic.com/en/docs/claude-code/skills
 
 Untuk proyek, gunakan **.github/skills/**. Untuk penggunaan pribadi, gunakan **~/.copilot/skills/** atau lokasi umum **~/.agents/skills/** bila didukung oleh pengalaman Copilot yang dipakai. Skill dapat digunakan di pengalaman Copilot yang mendukung Agent Skills.
 
-Dokumentasi: https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
+Dokumentasi: https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills
 
 ### Gemini CLI
 
